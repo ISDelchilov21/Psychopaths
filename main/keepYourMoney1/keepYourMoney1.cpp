@@ -138,7 +138,7 @@ void question(string question, string a, string b, string c, string d, char corr
 
 	// this char will collect the correct answer
 	char answer;
-	cout << "Enter your nswer : ";
+	cout << "Enter your answer : ";
 	cin >> answer;
 	
 		if (answer == correctAnswer) {
