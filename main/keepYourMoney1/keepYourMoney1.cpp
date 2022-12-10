@@ -8,7 +8,7 @@ int questionNumber = 1;
 int correctAnswesrs = 0;
 int wrongAnswers = 0;
 bool ask[10] = { true, true, true, true, true, true, true, true, true, true };
-int sumInTheBank;
+long long int sumInTheBank, temp;
 
 void display();
 void randomQuestion();
@@ -21,14 +21,58 @@ void result();
 
 int main()
 {
-	cout << "Zdrasti ti si otvelchen milioner i trqbva da otgoworish na nqkolko wyprosa za da si zapajish bogatstvata."<<endl << "Sled veski gre[en otgowor ti se maha opredelena suma ot parite.Priqtna igra and Keep Your Money!"<<endl;
-	int firstFour, secondFour, thirdFour, lastFour;
-	cout << "Enter your card number or you will die: ";
-	cin >> firstFour>> secondFour>> thirdFour>> lastFour;
-	sumInTheBank = firstFour* secondFour + thirdFour * lastFour;
-	/*cout << "Ok you have in your bank account: "<< sumInTheBank/4 <<endl;
-	cout << "Let's get strat";*/
-	display();
+	cout << "1. Play"<< endl;
+	cout << "2. Story" << endl;
+	cout << "3. Exit"<< endl;
+	
+	int playOrNot;
+	cout << "Enter 1, 2 or 3: ";
+	cin >> playOrNot;
+	if (playOrNot != 1 && playOrNot != 2 && playOrNot != 3)
+	{
+		cout << "Incorrect input!";
+	}
+	else
+	{
+		if (playOrNot == 1)
+		{
+			system("cls");
+			cout << "Hello, let's get started!";
+			int firstFour, secondFour;
+			cout << "Enter your card number or you will die (it has to looks like these number 1234 5678): ";
+			cin >> firstFour >> secondFour;
+			sumInTheBank = firstFour * secondFour;
+			temp = sumInTheBank;
+			display();
+		}
+		if (playOrNot == 2) 
+		{
+			cout << "Hello, you are a millionaire who has been kidnapped by psychopaths who don't like that you have so much money"<< endl<<"you have to answer a few questions in order to sell your fortune." << endl  << "After many wrong answers psyhopats willburn in fire a certain amount of money. Enjoy the game and Keep Your Money!"<<endl;
+			cout <<"If you want to Play or Exit enter accordingly 1 and 2" << endl;
+			cout << "Enter 1 or 3: ";
+			cin >> playOrNot;
+			if (playOrNot == 1)
+			{
+				system("cls");
+				cout << "Hello, let's get started!";
+				int firstFour, secondFour;
+				cout << "Enter your card number or you will die (it has to looks like these number 1234 5678): ";
+				cin >> firstFour >> secondFour;
+				sumInTheBank = firstFour * secondFour;
+				temp = sumInTheBank;
+				display();
+			}
+			if (playOrNot == 3)
+			{
+				cout << "Buy";
+			}
+		
+		}
+		if (playOrNot == 3)
+		{
+			cout << "Buy";
+		}
+	}
 	
 }
 
@@ -107,25 +151,24 @@ void randomQuestion()
 void result()
 {
 	system("cls");
-	cout << "Total questions = " << questionNumber - 1 << endl;
-	cout << "Correct answers = " << correctAnswesrs << endl;
-	cout << "Wrong answers = " << wrongAnswers << endl;
+	cout << "Your correct answers are " << correctAnswesrs << endl;
+	cout << "Your wrong answers are " << wrongAnswers << endl;
 
-	cout << sumInTheBank;
-	/*if (correctAnswesrs >wrongAnswers)
+	cout << "Well, you had " << temp<<endl;
+	cout << "But now you have " << sumInTheBank<<". ";
+
+	if (sumInTheBank < temp / 2)
 	{
-		cout << "Pass"<<endl;
+		cout << "You are one of those individuals who cannot think."<<endl;
 	}
-	else if (correctAnswesrs > wrongAnswers)
+	if (sumInTheBank > temp / 2)
 	{
-		cout << "You lost your preshers like smigyl" << endl;
-
+		cout << "Lol! You аre smarter than I expected.";
 	}
-	else if (correctAnswesrs == wrongAnswers)
+	if (sumInTheBank == temp / 2)
 	{
-		cout << "50/50" << endl;
-
-	}*/
+		cout << "I can't say anything!";
+	}
 }
 
 // we pass five arguments
@@ -141,53 +184,15 @@ void question(string question, string a, string b, string c, string d, char corr
 	cout << "Enter your answer : ";
 	cin >> answer;
 	
-		if (answer == correctAnswer) {
-			correctAnswesrs++;
-		}
-		else
-		{
-			wrongAnswers++;
-			if ((sumInTheBank <= 49990000) && (sumInTheBank >= 39990000));
-			{
-				sumInTheBank -= 3600000;
-			}
-			if ((sumInTheBank <= 39990000) && (sumInTheBank >= 29900000));
-			{
-				sumInTheBank -= 2800000;
-			}
-			if ((sumInTheBank <= 29990000) && (sumInTheBank >= 19900000));
-			{
-				sumInTheBank -= 2500000;
-			}
-			if ((sumInTheBank <= 19990000) && (sumInTheBank >= 9900000));
-			{
-				sumInTheBank -= 1400000;
-			}
-			if ((sumInTheBank <= 9990000) && (sumInTheBank >= 5900000));
-			{
-				sumInTheBank -= 1400000;
-			}
-			if ((sumInTheBank <= 5900000) && (sumInTheBank >= 1900000));
-			{
-				sumInTheBank -= 1100000;
-			}
-			if ((sumInTheBank <= 1900000) && (sumInTheBank >= 900000));
-			{
-				sumInTheBank -= 170000;
-			}
-			if ((sumInTheBank <= 900000) && (sumInTheBank >= 500000));
-			{
-				sumInTheBank -= 100000;
-			}
-			if ((sumInTheBank <= 500000) && (sumInTheBank >= 100000));
-			{
-				sumInTheBank -= 10500;
-			}
-			if ((sumInTheBank <= 100000) && (sumInTheBank >= 50000));
-			{
-				sumInTheBank -= 1999;
-			}
-		}
+	if (answer == correctAnswer) 
+	{
+		correctAnswesrs++;
+	}
+	else
+	{
+		wrongAnswers++;
+		sumInTheBank -= 10000;
+	}
 	
 	
 	questionNumber++;
