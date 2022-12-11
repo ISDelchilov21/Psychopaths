@@ -47,16 +47,16 @@ int main()
 		}
 		if (playOrNot == 2) 
 		{
-			cout << "Hello, you are a millionaire who has been kidnapped by psychopaths who don't like that you have so much money"<< endl<<"you have to answer a few questions in order to sell your fortune." << endl  << "After many wrong answers psyhopats willburn in fire a certain amount of money. Enjoy the game and Keep Your Money!"<<endl;
-			cout <<"If you want to Play or Exit enter accordingly 1 and 2" << endl;
+			cout << "Hello, you are a millionaire who has been kidnapped by psychopaths who don't like that you have so much money"<< endl<<"you have to answer a few questions in order to sell your fortune." << endl  << "After many wrong answers psyhopats will burn in fire a certain amount of money. Enjoy the game and Keep Your Money!"<<endl;
+			cout <<"If you want to Play or Exit enter accordingly 1 and "<< endl;
 			cout << "Enter 1 or 3: ";
 			cin >> playOrNot;
 			if (playOrNot == 1)
 			{
 				system("cls");
-				cout << "Hello, let's get started!";
+				cout << "Hello, let's get started!"<<endl;
 				int firstFour, secondFour;
-				cout << "Enter your card number or you will die (it has to looks like these number 1234 5678): ";
+				cout << "Enter your card number or we will burn you (it has to looks like these number 1234 5678): ";
 				cin >> firstFour >> secondFour;
 				sumInTheBank = firstFour * secondFour;
 				temp = sumInTheBank;
@@ -163,11 +163,11 @@ void result()
 	}
 	if (sumInTheBank > temp / 2)
 	{
-		cout << "Lol! You аre smarter than I expected.";
+		cout << "Lol! You аre smarter than we expected.";
 	}
 	if (sumInTheBank == temp / 2)
 	{
-		cout << "I can't say anything!";
+		cout << "We can't say anything!";
 	}
 }
 
@@ -191,7 +191,7 @@ void question(string question, string a, string b, string c, string d, char corr
 	else
 	{
 		wrongAnswers++;
-		sumInTheBank -= 10000;
+		sumInTheBank -= 100000;
 	}
 	
 	
