@@ -38,7 +38,7 @@ int main()
 		{
 			system("cls");
 			cout << "Hello, let's get started!";
-			int firstFour, secondFour;
+			long long int firstFour, secondFour;
 			cout << "Enter your card here (it should look like this - 1234 5678): ";
 			cin >> firstFour >> secondFour;
 			sumInTheBank = firstFour * secondFour;
@@ -57,7 +57,7 @@ int main()
 			{
 				system("cls");
 				cout << "Hello, let's get started!" << endl;
-				int firstFour, secondFour;
+				long long int firstFour, secondFour;
 				cout << "Enter your card number or we will burn you (your card number should look like this - 1234 5678): ";
 				cin >> firstFour >> secondFour;
 				sumInTheBank = firstFour * secondFour;
@@ -156,9 +156,10 @@ void result()
 	system("cls");
 	cout << "You have " << correctAnswesrs << " correct answers." << endl;
 	cout << "And " << wrongAnswers << " wrong answers." << endl;
+	cout << "That makes it " << correctAnswesrs << " out of " << questionNumber << endl;
 
-	cout << "Before we started you had " << temp << endl;
-	cout << "And now you have " << sumInTheBank << ". ";
+	cout << "Before we started you had " << temp << " bucks." << endl;
+	cout << "And now you have " << sumInTheBank << ".";
 
 	if (sumInTheBank < temp / 2)
 	{
