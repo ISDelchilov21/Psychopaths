@@ -5,10 +5,10 @@
 using namespace std;
 
 int questionNumber = 1;
-int correctAnswesrs = 0;
+int correctAnswers = 0;
 int wrongAnswers = 0;
 bool ask[10] = { true, true, true, true, true, true, true, true, true, true };
-long long int sumInTheBank, temp;
+long long int sumInTheBank;
 
 void display();
 void randomQuestion();
@@ -42,7 +42,7 @@ int main()
 			cout << "Enter your card here (it should look like this - 1234 5678): ";
 			cin >> firstFour >> secondFour;
 			sumInTheBank = firstFour * secondFour;
-			temp = sumInTheBank;
+
 			display();
 		}
 		if (playOrNot == 2)
@@ -61,14 +61,13 @@ int main()
 				cout << "Enter your card number or we will burn you (your card number should look like this - 1234 5678): ";
 				cin >> firstFour >> secondFour;
 				sumInTheBank = firstFour * secondFour;
-				temp = sumInTheBank;
+
 				display();
 			}
 			if (playOrNot == 3)
 			{
 				cout << "Buy";
 			}
-
 		}
 		if (playOrNot == 3)
 		{
@@ -86,7 +85,7 @@ void display()
 {
 	//This checks if our screen is clear.
 	system("cls");
-	cout << "Question number: " << questionNumber << "\t\tCorrect Answers: " << correctAnswesrs << "\t\tWrong Answers: " << wrongAnswers << endl << endl;
+	cout << "Question number: " << questionNumber << "\t\tCorrect Answers: " << correctAnswers << "\t\tWrong Answers: " << wrongAnswers << endl << endl;
 	randomQuestion();
 }
 
@@ -154,24 +153,34 @@ void randomQuestion()
 void result()
 {
 	system("cls");
-	cout << "You have " << correctAnswesrs << " correct answers." << endl;
+	cout << "You have " << correctAnswers << " correct answers." << endl;
 	cout << "And " << wrongAnswers << " wrong answers." << endl;
-	cout << "That makes it " << correctAnswesrs << " out of " << questionNumber << endl;
+	cout << "That makes it " << correctAnswers << " out of " << questionNumber - 1 << endl;
 
-	cout << "Before we started you had " << temp << " bucks." << endl;
-	cout << "And now you have " << sumInTheBank << ".";
-
-	if (sumInTheBank < temp / 2)
+	cout << "Before we started you had " << sumInTheBank << " bucks." << endl;
+	if (correctAnswers == 10)
 	{
+
+		cout << "And now you have " << sumInTheBank << "." << endl;
+		cout << "You are smarter than we expected." << endl;
+		cout << "You didn't lost anything." << endl;
+
+	}
+	if (correctAnswers < 10 && correctAnswers >= 5)
+	{
+
+		cout << "And now you have " << sumInTheBank / 2 << " bucks." << endl;
+		cout << "You have left with half of your money." << endl;
+		cout << "You lost half of your money.";
+
+	}
+	if (correctAnswers < 5)
+	{
+
+		cout << "And now you have " << 0 << " bucks." << endl;
 		cout << "You are one of those individuals who cannot think." << endl;
-	}
-	if (sumInTheBank > temp / 2)
-	{
-		cout << "You are smarter than we expected.";
-	}
-	if (sumInTheBank == temp / 2)
-	{
-		cout << "You have left with half of your money.";
+		cout << "You lost all your money.";
+
 	}
 }
 
@@ -191,12 +200,12 @@ void question(string question, string A, string B, string C, string D, char corr
 
 	if (answer == correctAnswer)
 	{
-		correctAnswesrs++;
+		correctAnswers++;
 	}
 	else
 	{
 		wrongAnswers++;
-		sumInTheBank -= 170000;
+
 	}
 
 
