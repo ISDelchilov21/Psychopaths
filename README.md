@@ -1,7 +1,7 @@
 # Psychopaths
 ## Our logo
 ![logo](https://user-images.githubusercontent.com/107105752/207446933-9446d73e-2a37-4964-a05f-96912a7f4eb5.png)
-## ![image](https://user-images.githubusercontent.com/107105752/207451537-4c5f0c06-c7ac-4450-9e98-30197e335b39.png)
+##![image](https://user-images.githubusercontent.com/107105752/207451537-4c5f0c06-c7ac-4450-9e98-30197e335b39.png)
 The team
 - Ivan Delchilov - Scrum Trainer
 - Angel Angelov - QA
