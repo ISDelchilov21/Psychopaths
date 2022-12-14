@@ -22,6 +22,7 @@ void result();
 
 int main()
 {
+	cout << "Welcome to Keep Your Money!" << endl << endl;
 	cout << "1. Play" << endl;
 	cout << "2. Story and rules" << endl;
 	cout << "3. Exit" << endl;
@@ -47,7 +48,9 @@ int main()
 			display();
 		}
 		if (playOrNot == 2)
+
 		{
+			system("cls");
 			cout << "Hello, you have been kidnapped by us - The Psyhopaths -. And the reason is your amount of money. " << endl << "We don't like rich people because most of them are greedy and selfish. " << endl;
 			cout << "So we decided to make this game called KeepYourMoney" << endl << "The rules are simple. " << endl << "We  will give you 10 questions and you have to answer. You have unlimited time for every question." << endl;
 			cout << "" << endl;
@@ -86,7 +89,9 @@ void display()
 {
 	//This checks if our screen is clear.
 	system("cls");
-	cout << "Question number: " << questionNumber << "\t\tCorrect Answers: " << correctAnswers << "\t\tWrong Answers: " << wrongAnswers << endl << endl;
+	cout << "? ? ? ? ? ? ? ? ? ? ?" << " \t\t? ? ? ? ? ? ? ? ? ? ?" << "\t\t? ? ? ? ? ? ? ? ? ?" << endl;
+	cout << " Question number: " << questionNumber << "\t\t Correct Answers: " << correctAnswers << "\t\t Wrong Answers: " << wrongAnswers << endl;
+	cout << "? ? ? ? ? ? ? ? ? ? ?" << " \t\t? ? ? ? ? ? ? ? ? ? ?" << "\t\t? ? ? ? ? ? ? ? ? ?" << endl << endl << endl;
 	randomQuestion();
 }
 
@@ -194,7 +199,7 @@ void result()
 
 		cout << "And now you have " << 0 << " bucks." << endl;
 		cout << "You are one of those individuals who cannot think." << endl;
-		cout << "You lost all your money.";
+
 
 	}
 }
@@ -203,10 +208,13 @@ void result()
 void question(string question, string A, string B, string C, string D, char correctAnswer)
 {
 	cout << question << endl;
-	cout << "A. \t" << A << endl;
-	cout << "B. \t" << B << endl;
-	cout << "C. \t" << C << endl;
-	cout << "D. \t" << D << endl;
+
+	cout << "$A. " << A << endl;
+	cout << "$B. " << B << endl;
+	cout << "$C. " << C << endl;
+	cout << "$D. " << D << endl;
+
+
 
 	// This char collects the correct answer
 	char answer;
