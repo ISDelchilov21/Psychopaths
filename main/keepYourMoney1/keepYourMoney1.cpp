@@ -1,8 +1,8 @@
-﻿
-#include <iostream> 
+﻿#include <iostream> 
 #include <random>
 #include <ctime>
 #include <string>
+
 using namespace std;
 
 int questionNumber = 1;
@@ -18,8 +18,7 @@ void result();
 
 
 
-
-
+//This is our main function.
 int main()
 {
 	cout << "Welcome to Keep Your Money!" << endl << endl;
@@ -28,18 +27,18 @@ int main()
 	cout << "3. Exit" << endl;
 
 	int playOrNot;
+
 	cout << "Enter 1, 2 or 3: ";
 	cin >> playOrNot;
 	if (playOrNot != 1 && playOrNot != 2 && playOrNot != 3)
-	{
 		cout << "Incorrect input!";
-	}
 	else
 	{
 		if (playOrNot == 1)
 		{
 			system("cls");
 			cout << "Hello, let's get started!";
+
 			long long int firstFour, secondFour;
 			cout << "Enter your card here (it should look like this - 1234 5678): ";
 			cin >> firstFour >> secondFour;
@@ -47,8 +46,8 @@ int main()
 
 			display();
 		}
-		if (playOrNot == 2)
 
+		if (playOrNot == 2)
 		{
 			system("cls");
 			cout << "Hello, you have been kidnapped by us - The Psyhopaths -. And the reason is your amount of money. " << endl << "We don't like rich people because most of them are greedy and selfish. " << endl;
@@ -56,11 +55,14 @@ int main()
 			cout << "" << endl;
 			cout << "If you want to Play or Exit enter 1 and " << endl;
 			cout << "Enter 1 or 3: ";
+
 			cin >> playOrNot;
+
 			if (playOrNot == 1)
 			{
 				system("cls");
 				cout << "Hello, let's get started!" << endl;
+
 				long long int firstFour, secondFour;
 				cout << "Enter your card number or we will burn you (your card number should look like this - 1234 5678): ";
 				cin >> firstFour >> secondFour;
@@ -68,23 +70,19 @@ int main()
 
 				display();
 			}
-			if (playOrNot == 3)
-			{
-				cout << "Buy!";
-			}
-		}
-		if (playOrNot == 3)
-		{
-			cout << "Buy!";
-		}
-	}
 
+			if (playOrNot == 3)
+				cout << "Buy!";
+
+		}
+
+		if (playOrNot == 3)
+			cout << "Buy!";
+
+	}
 }
 
-
-
-// This function displays if questionNumber is correctAnswer or if it is wrongAnswer.
-//Also this is our main function.
+//This function displays, if questionNumber is correctAnswer or if it is wrongAnswer.
 void display()
 {
 	//This checks if our screen is clear.
@@ -95,7 +93,7 @@ void display()
 	randomQuestion();
 }
 
-// THis function will pick up random question in the console
+//This function picks up random question in the console
 void randomQuestion()
 {
 	srand(time(0));
@@ -112,7 +110,7 @@ void randomQuestion()
 	{
 		int randomNumber = rand() % 15;
 
-		//We make sure that  the question is different every time.
+		//We make sure the question is different every time.
 		if (ask[randomNumber])
 		{
 			ask[randomNumber] = false;
@@ -167,8 +165,8 @@ void randomQuestion()
 		}
 	}
 	result();
-
 }
+
 //This function will return the result of the game
 void result()
 {
@@ -180,31 +178,25 @@ void result()
 	cout << "Before we started you had " << sumInTheBank << " bucks." << endl;
 	if (correctAnswers == 10)
 	{
-
 		cout << "And now you have " << sumInTheBank << "." << endl;
 		cout << "You are smarter than we expected." << endl;
 		cout << "You didn't lost anything." << endl;
-
 	}
+
 	if (correctAnswers < 10 && correctAnswers >= 5)
 	{
-
 		cout << "And now you have " << sumInTheBank / 2 << " bucks." << endl;
 		cout << "You have left with half of your money." << endl;
-
-
 	}
+
 	if (correctAnswers < 5)
 	{
-
 		cout << "And now you have " << 0 << " bucks." << endl;
 		cout << "You are one of those individuals who cannot think." << endl;
-
-
 	}
 }
 
-// we pass five arguments
+//We pass five arguments
 void question(string question, string A, string B, string C, string D, char correctAnswer)
 {
 	cout << question << endl;
@@ -213,8 +205,6 @@ void question(string question, string A, string B, string C, string D, char corr
 	cout << "$B. " << B << endl;
 	cout << "$C. " << C << endl;
 	cout << "$D. " << D << endl;
-
-
 
 	// This char collects the correct answer
 	char answer;
@@ -228,9 +218,7 @@ void question(string question, string A, string B, string C, string D, char corr
 	else
 	{
 		wrongAnswers++;
-
 	}
-
 
 	questionNumber++;
 	display();
