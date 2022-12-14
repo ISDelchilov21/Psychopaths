@@ -52,7 +52,7 @@ int main()
 		{
 			system("cls");
 			cout << "Hello, you have been kidnapped by us - The Psyhopaths -. And the reason is your amount of money. " << endl << "We don't like rich people because most of them are greedy and selfish. " << endl;
-			cout << "So we decided to make this game called KeepYourMoney" << endl << "The rules are simple. " << endl << "We  will give you 10 questions and you have to answer. You have unlimited time for every question." << endl;
+			cout << "So we decided to make this game called KeepYourMoney" << endl << "The rules are simple. " << endl << "We  will give you 15 questions and you have to answer. You have unlimited time for every question." << endl<<"If you enter the number card like this 1b4a 24h2, any character other than the numbers 0 to 9 will be counted as a wrong answer be careful.";
 			cout << "" << endl;
 			cout << "If you want to Play or Exit enter 1 and " << endl;
 			cout << "Enter 1 or 3: ";
