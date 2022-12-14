@@ -1,4 +1,5 @@
-﻿#include <iostream> 
+﻿
+#include <iostream> 
 #include <random>
 #include <ctime>
 #include <string>
@@ -7,7 +8,7 @@ using namespace std;
 int questionNumber = 1;
 int correctAnswers = 0;
 int wrongAnswers = 0;
-bool ask[10] = { true, true, true, true, true, true, true, true, true, true };
+bool ask[15] = { true, true, true, true, true, true, true, true, true, true, true, true, true, true, true };
 long long int sumInTheBank;
 
 void display();
@@ -66,12 +67,12 @@ int main()
 			}
 			if (playOrNot == 3)
 			{
-				cout << "Buy";
+				cout << "Buy!";
 			}
 		}
 		if (playOrNot == 3)
 		{
-			cout << "Buy";
+			cout << "Buy!";
 		}
 	}
 
@@ -94,7 +95,7 @@ void randomQuestion()
 {
 	srand(time(0));
 	bool isQuestionRemaining = false;
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 15; i++)
 	{
 		if (ask[i])
 		{
@@ -104,7 +105,7 @@ void randomQuestion()
 	}
 	while (isQuestionRemaining)
 	{
-		int randomNumber = rand() % 10;
+		int randomNumber = rand() % 15;
 
 		//We make sure that  the question is different every time.
 		if (ask[randomNumber])
@@ -142,7 +143,21 @@ void randomQuestion()
 			case 9:
 				question("Who delivered the less famous two-hour speech that preceded Abraham Lincoln's two-minute Gettysburg Address?", "Wendell Phillips", "Daniel Webster", "Robert G.Ingersoll", "Edward Everett laanguage", 'D');
 				break;
-
+			case 10:
+				question("The Earth is approximately how many miles away from the Sun?", "9.3 million", "39 million", "93 million", "193 million", 'A');
+				break;
+			case 11:
+				question("Which insect shorted out an early supercomputer and inspired the term 'computer bug'?", "Moth", "Roach", "Fly", "Japanase beetle", 'A');
+				break;
+			case 12:
+				question("Which of the following landlocked countries is entirely contained within another country?", "Mongolia", "Burkina Faso", "Lesotho", "Luxembourg", 'C');
+				break;
+			case 13:
+				question("In the children’s book series, where is Paddington Bear originally from?", "India", "Peru", "Canada", "Iceland", 'B');
+				break;
+			case 14:
+				question("Who is credited with inventing the first mass-produced helicopter?", "Ferdinand von Zeppelin", "Elmer Sperry", "Gottlieb Daimler", "Igor Sikorsky", 'D');
+				break;
 			}
 		}
 	}
@@ -171,7 +186,7 @@ void result()
 
 		cout << "And now you have " << sumInTheBank / 2 << " bucks." << endl;
 		cout << "You have left with half of your money." << endl;
-		cout << "You lost half of your money.";
+
 
 	}
 	if (correctAnswers < 5)
